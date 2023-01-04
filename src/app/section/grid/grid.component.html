@@ -1,0 +1,35 @@
+<div class="grid title">
+  <div>id</div>
+  <div>name</div>
+  <div>ord</div>
+  <div>search_id</div>
+</div>
+<button (click)="showBtn(value.id)" class="grid" *ngFor="let value of result">
+    <div>{{ value.id }}</div>
+    <div>{{ value.name }}</div>
+    <div>{{ value.ord }}</div>
+    <div>{{ value.searchId }}</div>
+    <button type="button" (click)="deleteDate(value.id, $event)">삭제</button>
+</button>
+<div class="detail-page" *ngIf="detailPageShow; else hidden">
+  <div class="detail">
+    <h3>상세페이지</h3>
+    <button (click)="hideBtn()">닫기</button>
+  </div>
+  <div class="grid pop">
+      <div>id 값</div>
+      <div>name 값</div>
+      <div>ord 값</div>
+      <div>search_id 값</div>
+  </div>
+  <div class="grid pop">
+    <!-- 여러개의 배열을 가져오는 것이 아니기 때문에 굳이 *ngFor 쓸 이유가 x  -->
+    <!-- 이런식으로 값을 가져와도 됨 -->
+    <div>{{ detailValue.id }}</div>
+    <div><input [type]="" [(ngModel)]="detailValue.name"/></div>
+    <div><input [type]="" [(ngModel)]="detailValue.ord"/></div>
+    <div><input [type]="" [(ngModel)]="detailValue.searchId"/></div>
+    <button type="button" (click)="onSave()" class="save">저장</button>
+  </div>
+</div>
+<ng-template #hidden>

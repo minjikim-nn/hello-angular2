@@ -1,0 +1,13 @@
+<h2>ngIf angular if문 알아보기</h2>
+<button type="button" (click)="onEditClick()">
+    버튼 클릭
+</button>
+<!-- 앵귤러의 if문 true else false잉가 -->
+<div *ngIf="canEdit; else noEdit">
+    <p>클릭시 true로 변경됨</p>
+</div>
+<!--  -->
+<ng-template #noEdit>
+    <p>값이 false일 때, ng-template #noEdite 보여줌</p>
+</ng-template>
+<p [contentEditable]="canEdit"> default 메세지 보여주기 ( {{ message }} )</p>

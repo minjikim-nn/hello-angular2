@@ -1,0 +1,30 @@
+<div class="board">
+  <!-- 공지 / 출근 -->
+  <div>
+    <h2>공지사항</h2>
+    <div>
+      <div class="grid-title">
+        <div>순번</div>
+        <div>제목</div>
+        <div>내용</div>
+        <div>날짜</div>
+      </div>
+      <div class="grid-content" *ngFor="let notice of noticeList">
+        <div class="ord">{{notice.id}}</div>
+        <div>{{notice.subject}}</div>
+        <div>{{notice.contents}}</div>
+        <div>{{notice.regDt}}</div>
+      </div>
+    </div>
+    <h2>출근</h2>
+    <app-chart></app-chart>
+  </div>
+  <!-- 카드 -->
+  <div>
+    <div class="card-inner">
+      <div class="card" *ngFor="let card of cardList; let idx = index">
+        <app-card [idx]="idx" [card]="card"></app-card>
+      </div>
+    </div>
+  </div>
+</div>

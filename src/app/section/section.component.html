@@ -1,0 +1,24 @@
+<div>section 1</div>
+<div>
+        <!-- 자식 컴포넌트에 있는 변수="부모에서 설정한 값" -->
+  <app-search [item]="currentItem" (searchDataChange)="addItem($event)"></app-search>
+  <div class="tab">
+    <button id="btn1" (click)="show(1)">목록</button>
+    <button id="btn2" (click)="show(0)">입력</button>
+    <div class="btn1" *ngIf="num == 1">
+        <!-- [class.hidden]="!hidden" -->
+      <app-grid [result]="resultList"></app-grid>
+    </div>
+    <div class="btn2" *ngIf="num == 0">
+        <!-- [class.hidden]="hidden" -->
+      <form>
+          <!-- name값이 꼭 필요한가? 안쓰면 오류남 -->
+          <!-- id <input name="column1" [(ngModel)]="column1" disabled=""/> -->
+          name <input name="column2" [(ngModel)]="name"/>
+          number <input name="column3" [(ngModel)]="ord"/>
+          search_id <input name="column4" [(ngModel)]="search_id"/>
+          <button (click)="saveValue()">저장</button>
+      </form>
+    </div>
+  </div>
+</div>

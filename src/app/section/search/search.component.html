@@ -1,0 +1,28 @@
+<div>
+    <p>{{value}}</p>
+    <input [value]="value" (input)="onInput($event)" placeholder="just input"/><br/>
+    <!-- <input [value]="currentItem.name" (input)="currentItem.name=getValue($event)" /> -->
+
+    <!-- <button (click)="getSearch1()">search1 가져오기</button><br/> -->
+    검색1
+    <select id="search1" [(ngModel)]="selectValue" (ngModelChange)="selectChange()">
+        <option value="">선택안함</option>
+        <option *ngFor="let search1 of searchList" [value]="search1.id">
+            {{search1.name}}
+        </option>
+    </select>
+    검색2
+    <!--
+        [(ngModel)]="selectValue2" (ngModelChange)="selectChange2($event)"
+        추가하면 화면에 바로 안나옴
+    -->
+    <select id="search2" [(ngModel)]="selectValue2">
+        <option value="">선택안함</option>
+        <option *ngFor="let search2 of searchList2" [value]="search2['id']">
+            {{search2['name']}}
+        </option>
+    </select>
+    <button type="button" (click)="onSearch($event)">검색</button>
+    <p>부모컴포넌트에서 보낸 데이터(section의 app-search 태그 내 [item]="currentItem"): {{item}}</p>
+    <!-- <button (click)="addNewItem()">자식 ->부모컴포넌트로 데이터보내기</button> -->
+</div>

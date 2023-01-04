@@ -1,0 +1,22 @@
+<div *ngIf="visible">
+  <input type="text" placeholder="id 입력" [(ngModel)]="user_id" />
+  <input type="text" placeholder="pwd 입력" [(ngModel)]="pwd" />
+  <button (click)="onLogin()">login</button>
+</div>
+<span *ngIf="pwd && pwd.length < 4"
+  class="red">
+  비밀번호는 4자리 이상이어야 합니다.
+</span>
+<!-- ngClass 들어오는 값에 따라 클래스명을 다르게 주는건가?
+  https://gguldh.tistory.com/38
+  https://webisfree.com/2016-12-04/ng-class-%EC%86%8D%EC%84%B1-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0-ngclass-%EB%94%94%EB%A0%89%ED%8B%B0%EB%B8%8C-%EC%82%AC%EC%9A%A9%EB%B0%A9%EB%B2%95
+-->
+<div *ngIf="message" [ngClass]="{'black': message}">
+                            <!-- 클래스명: <- 값있으면 -->
+  {{ message }}
+</div>
+                        <!-- id 이름으로 user_id 값을 넘김  -->
+                        <!-- 자식 컴포넌트 변수="보낼값" -->
+<app-welcome *ngIf="visible1" [id]="user_id"></app-welcome>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,16 @@
+<div class="stopwatch">
+    <p>app-section의 자식 컴포넌트는 app-section에서 작업</p>
+    <p>디렉토리도 section 아래에 만드는것이 효율적</p>
+    <div class="center">
+        <!-- [inputData]="present" -> 'start' -->
+        <app-time-display [inputData]="present"></app-time-display>
+        <app-buttons (clickEvent)="startTime($event)"></app-buttons>
+
+        <p>선택 : {{commandText}}</p>
+        <app-buttons (clickEvent)="commandText = $event"></app-buttons>
+
+    </div>
+</div>
+
+<!-- 오 router link => 사용할 때 module에 routerModule import 해줘야함 -->
+<a [routerLink]="['/test']" routerLinkActive="router-link-active" >test component로 이동</a>

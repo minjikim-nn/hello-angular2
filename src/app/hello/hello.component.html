@@ -1,0 +1,11 @@
+<div>
+    <p>ng build --> build가 완료되면 dist 라는 파일이 생김</p>
+    <p>설정은 angular.jsos 파일 내 build 밑에 outputPath에서 확인</p>
+    <p [id]="sayHelloId" [style.color]="fontColor">{{ message }}</p>
+    <p>
+        태그 안에 값은 중괄호 두개로 감싸서 사용(템플릿에 문자열 바인딩)
+    </p>
+    <button type="button" [disabled]="canClick" (click)="sayMessage()">
+        버튼을 클릭해보시오
+    </button>
+</div>

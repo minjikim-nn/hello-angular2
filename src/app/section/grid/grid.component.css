@@ -1,0 +1,39 @@
+.title{
+    font-weight: bold;
+}
+.grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr .4fr;
+    color: black;
+    text-decoration: none;
+    background: transparent;
+    appearance: none;
+    border: 0;
+    text-align: left;
+}
+.grid.pop:hover{
+  background: transparent;
+}
+.grid:hover{
+    background: lightgray;
+}
+h3{
+    text-align: center;
+}
+.detail-page{
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    background: palevioletred;
+}
+.detail-page .detail{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.detail-page .detail button{
+    position: absolute;
+    right: 10px;
+}

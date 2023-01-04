@@ -1,0 +1,14 @@
+.main{
+    width: 100%;
+    min-height: 100px;
+    height: auto;
+    background: lightyellow;
+}
+.black{
+  font-size: 12px;
+  color: black;
+}
+.red{
+  font-size: 12px;
+  color: red;
+}

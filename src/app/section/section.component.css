@@ -1,0 +1,22 @@
+.section{
+    width: 100%;
+    height: auto;
+    background: lightpink;
+}
+.center{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    border: 1px solid black;
+}
+form input{
+    display: block;
+}
+
+.hidden{
+    display: none;
+}
